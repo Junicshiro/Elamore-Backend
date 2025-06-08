@@ -17,7 +17,7 @@ class ContactController extends Controller
         ]);
 
         Mail::raw("Pesan dari: {$validated['name']} ({$validated['email']})\n\n{$validated['message']}", function ($mail) {
-            $mail->to('elamore.tobelo@gmail.com')
+            $mail->to('elamoreweb@gmail.com')
                  ->subject('Pesan dari Form Kontak');
         });
 
