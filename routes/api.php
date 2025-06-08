@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\AdminAuthController;
+use App\Http\Controllers\Api\ContactController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -43,3 +44,4 @@ Route::get('/admin/summary', [DashboardController::class, 'summary']);
 
 Route::post('/admin/login', [AdminAuthController::class, 'login']);
 
+Route::post('/contact', [ContactController::class, 'send']);
