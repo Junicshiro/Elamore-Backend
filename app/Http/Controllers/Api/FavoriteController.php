@@ -27,8 +27,15 @@ class FavoriteController extends Controller
 
     public function destroy($id)
     {
-        Favorite::findOrFail($id)->delete();
-        return response()->json(['message' => 'Berhasil dihapus']);
+        $favorite = Favorite::find($id);
+
+        if (!$favorite) {
+            return response()->json(['message' => 'Data favorit tidak ditemukan'], 404);
+        }
+
+        $favorite->delete();
+
+        return response()->json(['message' => 'Data favorit berhasil dihapus']);
     }
 
 }

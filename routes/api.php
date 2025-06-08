@@ -26,7 +26,7 @@ Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
 Route::post('/favorites', [FavoriteController::class, 'store']);
 Route::get('/favorites/{user_id}', [FavoriteController::class, 'index']);
-Route::delete('/favorites', [FavoriteController::class, 'destroy']);
+Route::delete('/favorites/{id}', [FavoriteController::class, 'destroy']);
 Route::get('/favorites/{user_id}', [FavoriteController::class, 'getByUser']);
 
 Route::post('/cart', [CartController::class, 'store']);
